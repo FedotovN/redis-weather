@@ -1,5 +1,5 @@
-import { API_KEY } from '../env';
-import { client } from "../caching/redis.client";
+import { API_KEY } from '../env.js';
+import { client } from "../caching/redis.client.js";
 
 class WeatherService {
     async getWeather(location: string) {

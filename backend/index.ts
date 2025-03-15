@@ -1,8 +1,8 @@
 import express from 'express';
-import { PORT } from './env';
+import { PORT } from './env.js';
 import cors from 'cors';
-import WeatherRouter from "./routers/WeatherRouter";
-import {client} from "./caching/redis.client";
+import WeatherRouter from "./routers/WeatherRouter.js";
+import {client} from "./caching/redis.client.js";
 
 const app = express();
 
