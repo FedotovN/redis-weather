@@ -98,9 +98,8 @@ async function getWeatherConditions() {
       "Content-Type": "application/json",
     }
   };
-  const { hostname, protocol } = window.location;
   const endpoint = 'api/weather/condition';
-  const response = await fetch(`${protocol}//${hostname}:3000/${endpoint}`, parameters);
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/${endpoint}`, parameters);
   const { data } = await response.json();
   const {
     resolvedAddress,

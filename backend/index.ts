@@ -1,5 +1,5 @@
 import express from 'express';
-import { PORT } from './env.js';
+import { CORS_ALLOW, PORT } from './env.js';
 import cors from 'cors';
 import WeatherRouter from "./routers/WeatherRouter.js";
 import {client} from "./caching/redis.client.js";
@@ -13,7 +13,9 @@ async function connectRedis() {
 
 function setupPlugins() {
     app.use(express.json());
-    app.use(cors());
+    app.use(cors({
+        origin: CORS_ALLOW,
+    }));
 }
 
 function setupRouting() {
