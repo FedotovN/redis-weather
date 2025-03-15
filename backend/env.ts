@@ -13,5 +13,10 @@ const { error, parsed } = dotenv.config({ path });
 if (error) {
     throw error;
 }
-const { PORT, API_KEY, CORS_ALLOW } = parsed as unknown as { PORT: number, API_KEY: string, CORS_ALLOW: string };
-export { PORT, API_KEY, CORS_ALLOW };
+const { PORT, API_KEY, CORS_ALLOW, REDIS_URL } = parsed as unknown as {
+    PORT: number;
+    API_KEY: string;
+    CORS_ALLOW: string;
+    REDIS_URL: string;
+};
+export { PORT, API_KEY, CORS_ALLOW, REDIS_URL };
